@@ -31,7 +31,7 @@
 
 <p>This is my space</p>
 
-<pre><code>const JeffBowen = () => {
+<pre><code>function getJeffBowenInfo() {
     return {
       type: JEFF_BOWEN_RECEIVE_INFO,
       WordPress: 'jblz',
@@ -39,9 +39,9 @@
       Twitter: '@alapapa',
       Web: 'https://get2see.me'
     };
-};
+}
 
-dispatch( JeffBowen() );
+dispatch( getJeffBowenInfo() );
 </code></pre>
       </section>
     </div>
