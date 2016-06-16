@@ -31,18 +31,17 @@
 
 <p>This is my space</p>
 
-<pre><code>var JeffBowen = (function() {
-    return function() {
-        return {
-            "WordPress": "jblz",
-            "Github": "jblz",
-            "Twitter": "@alapapa",
-            "Web": "http://get2see.me"
-        };
+<pre><code>const JeffBowen = () => {
+    return {
+      type: RECEIVE_JEFF_BOWEN_INFO,
+      WordPress: 'jblz',
+      Github: 'jblz',
+      Twitter: '@alapapa',
+      Web: 'https://get2see.me'
     };
-})();
+};
 
-github( new JeffBowen() );
+dispatch( JeffBowen() );
 </code></pre>
       </section>
     </div>
