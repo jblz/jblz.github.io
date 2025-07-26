@@ -138,7 +138,12 @@ class GitHubContributions {
 
     async fetchUserInfo() {
         return this.fetchFromCache('userInfo', async () => {
-            const response = await fetch(`${this.apiUrl}/users/${this.username}`);
+            const response = await fetch(`${this.apiUrl}/users/${this.username}`, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'User-Agent': 'jblz.github.io'
+                }
+            });
             if (!response.ok) throw new Error(`Failed to fetch user info: ${response.status}`);
             return response.json();
         });
@@ -146,7 +151,12 @@ class GitHubContributions {
 
     async fetchRepositories() {
         return this.fetchFromCache('repositories', async () => {
-            const response = await fetch(`${this.apiUrl}/users/${this.username}/repos?sort=updated&per_page=100`);
+            const response = await fetch(`${this.apiUrl}/users/${this.username}/repos?sort=updated&per_page=100`, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'User-Agent': 'jblz.github.io'
+                }
+            });
             if (!response.ok) throw new Error(`Failed to fetch repositories: ${response.status}`);
             return response.json();
         });
@@ -154,7 +164,12 @@ class GitHubContributions {
 
     async fetchEvents() {
         return this.fetchFromCache('events', async () => {
-            const response = await fetch(`${this.apiUrl}/users/${this.username}/events/public?per_page=30`);
+            const response = await fetch(`${this.apiUrl}/users/${this.username}/events/public?per_page=30`, {
+                headers: {
+                    'Accept': 'application/vnd.github.v3+json',
+                    'User-Agent': 'jblz.github.io'
+                }
+            });
             if (!response.ok) throw new Error(`Failed to fetch events: ${response.status}`);
             return response.json();
         });
@@ -343,12 +358,22 @@ class GitHubContributions {
                 throw new Error(`Container with id '${containerId}' not found`);
             }
 
+            const isLocalhost = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+            const devNotice = isLocalhost ? `
+                <div class="dev-notice">
+                    <h3>🚧 Development Mode</h3>
+                    <p>Showing sample data for demonstration. Real GitHub data will be displayed when deployed to GitHub Pages.</p>
+                </div>
+            ` : '';
+
             container.innerHTML = `
                 <div class="github-contributions">
                     <div class="contributions-header">
                         <h2>GitHub Contributions</h2>
                         <p>Showcasing activity across all repositories</p>
                     </div>
+                    
+                    ${devNotice}
                     
                     ${this.renderUserStats(user)}
                     
