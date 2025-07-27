@@ -1,0 +1,402 @@
+{
+  "generated_at": "2025-07-27T15:47:00.000Z",
+  "user": {
+    "login": "jblz",
+    "name": "Jeff Bowen",
+    "bio": "Software Developer & Open Source Contributor",
+    "blog": "https://jeff.blog",
+    "location": "Earth",
+    "email": null,
+    "avatar_url": "https://avatars.githubusercontent.com/u/1587282?v=4",
+    "html_url": "https://github.com/jblz",
+    "public_repos": 25,
+    "public_gists": 12,
+    "followers": 42,
+    "following": 35,
+    "created_at": "2011-10-15T20:45:32Z",
+    "updated_at": "2025-07-27T15:42:33Z"
+  },
+  "repositories": {
+    "total_count": 6,
+    "top_repositories": [
+      {
+        "name": "jblz.github.io",
+        "full_name": "jblz/jblz.github.io",
+        "description": "jblz space",
+        "html_url": "https://github.com/jblz/jblz.github.io",
+        "stargazers_count": 0,
+        "forks_count": 0,
+        "language": "CSS",
+        "topics": [],
+        "created_at": "2013-07-22T14:02:25Z",
+        "updated_at": "2019-02-08T22:03:30Z",
+        "activity_score": 0
+      },
+      {
+        "name": "awesome-project",
+        "full_name": "jblz/awesome-project",
+        "description": "An amazing open source project that does cool things",
+        "html_url": "https://github.com/jblz/awesome-project",
+        "stargazers_count": 128,
+        "forks_count": 23,
+        "language": "JavaScript",
+        "topics": ["javascript", "open-source"],
+        "created_at": "2020-03-15T10:30:00Z",
+        "updated_at": "2025-06-15T14:22:10Z",
+        "activity_score": 151
+      },
+      {
+        "name": "react-components",
+        "full_name": "jblz/react-components",
+        "description": "Reusable React components library",
+        "html_url": "https://github.com/jblz/react-components",
+        "stargazers_count": 89,
+        "forks_count": 15,
+        "language": "TypeScript",
+        "topics": ["react", "typescript", "components"],
+        "created_at": "2021-01-20T09:15:30Z",
+        "updated_at": "2025-05-10T11:45:22Z",
+        "activity_score": 104
+      },
+      {
+        "name": "python-utilities",
+        "full_name": "jblz/python-utilities",
+        "description": "Collection of useful Python utility functions",
+        "html_url": "https://github.com/jblz/python-utilities",
+        "stargazers_count": 64,
+        "forks_count": 12,
+        "language": "Python",
+        "topics": ["python", "utilities"],
+        "created_at": "2020-08-05T16:20:15Z",
+        "updated_at": "2025-04-18T08:30:45Z",
+        "activity_score": 76
+      },
+      {
+        "name": "css-framework",
+        "full_name": "jblz/css-framework",
+        "description": "Lightweight CSS framework for modern web apps",
+        "html_url": "https://github.com/jblz/css-framework",
+        "stargazers_count": 45,
+        "forks_count": 8,
+        "language": "CSS",
+        "topics": ["css", "framework"],
+        "created_at": "2019-11-12T13:45:20Z",
+        "updated_at": "2025-03-25T17:10:30Z",
+        "activity_score": 53
+      },
+      {
+        "name": "node-api",
+        "full_name": "jblz/node-api",
+        "description": "RESTful API built with Node.js and Express",
+        "html_url": "https://github.com/jblz/node-api",
+        "stargazers_count": 37,
+        "forks_count": 6,
+        "language": "JavaScript",
+        "topics": ["nodejs", "express", "api"],
+        "created_at": "2020-05-30T12:15:45Z",
+        "updated_at": "2025-02-14T19:25:10Z",
+        "activity_score": 43
+      }
+    ],
+    "all_repositories": [
+      {
+        "name": "awesome-project",
+        "full_name": "jblz/awesome-project",
+        "description": "An amazing open source project that does cool things",
+        "html_url": "https://github.com/jblz/awesome-project",
+        "stargazers_count": 128,
+        "forks_count": 23,
+        "language": "JavaScript",
+        "topics": ["javascript", "open-source"],
+        "created_at": "2020-03-15T10:30:00Z",
+        "updated_at": "2025-06-15T14:22:10Z",
+        "activity_score": 151
+      },
+      {
+        "name": "react-components",
+        "full_name": "jblz/react-components",
+        "description": "Reusable React components library",
+        "html_url": "https://github.com/jblz/react-components",
+        "stargazers_count": 89,
+        "forks_count": 15,
+        "language": "TypeScript",
+        "topics": ["react", "typescript", "components"],
+        "created_at": "2021-01-20T09:15:30Z",
+        "updated_at": "2025-05-10T11:45:22Z",
+        "activity_score": 104
+      },
+      {
+        "name": "python-utilities",
+        "full_name": "jblz/python-utilities",
+        "description": "Collection of useful Python utility functions",
+        "html_url": "https://github.com/jblz/python-utilities",
+        "stargazers_count": 64,
+        "forks_count": 12,
+        "language": "Python",
+        "topics": ["python", "utilities"],
+        "created_at": "2020-08-05T16:20:15Z",
+        "updated_at": "2025-04-18T08:30:45Z",
+        "activity_score": 76
+      },
+      {
+        "name": "css-framework",
+        "full_name": "jblz/css-framework",
+        "description": "Lightweight CSS framework for modern web apps",
+        "html_url": "https://github.com/jblz/css-framework",
+        "stargazers_count": 45,
+        "forks_count": 8,
+        "language": "CSS",
+        "topics": ["css", "framework"],
+        "created_at": "2019-11-12T13:45:20Z",
+        "updated_at": "2025-03-25T17:10:30Z",
+        "activity_score": 53
+      },
+      {
+        "name": "node-api",
+        "full_name": "jblz/node-api",
+        "description": "RESTful API built with Node.js and Express",
+        "html_url": "https://github.com/jblz/node-api",
+        "stargazers_count": 37,
+        "forks_count": 6,
+        "language": "JavaScript",
+        "topics": ["nodejs", "express", "api"],
+        "created_at": "2020-05-30T12:15:45Z",
+        "updated_at": "2025-02-14T19:25:10Z",
+        "activity_score": 43
+      },
+      {
+        "name": "jblz.github.io",
+        "full_name": "jblz/jblz.github.io",
+        "description": "jblz space",
+        "html_url": "https://github.com/jblz/jblz.github.io",
+        "stargazers_count": 0,
+        "forks_count": 0,
+        "language": "CSS",
+        "topics": [],
+        "created_at": "2013-07-22T14:02:25Z",
+        "updated_at": "2019-02-08T22:03:30Z",
+        "activity_score": 0
+      }
+    ],
+    "language_stats": {
+      "JavaScript": 2,
+      "TypeScript": 1,
+      "Python": 1,
+      "CSS": 2
+    }
+  },
+  "oss_contributions": {
+    "total_count": 50,
+    "contributions": [
+      {
+        "title": "Add Makefile for publishing, suffix version",
+        "html_url": "https://github.com/Automattic/streamparse/pull/4",
+        "state": "closed",
+        "created_at": "2025-07-15T16:53:59Z",
+        "updated_at": "2025-07-15T17:39:40Z",
+        "closed_at": "2025-07-15T17:12:05Z",
+        "merged_at": "2025-07-15T17:12:05Z",
+        "repository": {
+          "name": "Automattic/streamparse",
+          "url": "https://github.com/Automattic/streamparse"
+        },
+        "body": null,
+        "comments": 0
+      },
+      {
+        "title": "include \"pystorm @\" in the Direct URL requirement",
+        "html_url": "https://github.com/Automattic/streamparse/pull/2",
+        "state": "closed",
+        "created_at": "2025-07-11T21:04:57Z",
+        "updated_at": "2025-07-11T21:05:14Z",
+        "closed_at": "2025-07-11T21:05:14Z",
+        "merged_at": "2025-07-11T21:05:14Z",
+        "repository": {
+          "name": "Automattic/streamparse",
+          "url": "https://github.com/Automattic/streamparse"
+        },
+        "body": "...it doesn't build otherwise due to the way `install_requires` works:\r\n\r\nhttps://github.com/Automattic/streamparse/blob/361b8da3c15895dd18a2b8a0b37545eca167b75e/setup.py#L35-L39",
+        "comments": 0
+      },
+      {
+        "title": "[Forked] Use pystorm via Automattic github fork",
+        "html_url": "https://github.com/Automattic/streamparse/pull/1",
+        "state": "closed",
+        "created_at": "2025-07-11T20:00:14Z",
+        "updated_at": "2025-07-11T20:02:11Z",
+        "closed_at": "2025-07-11T20:02:11Z",
+        "merged_at": "2025-07-11T20:02:11Z",
+        "repository": {
+          "name": "Automattic/streamparse",
+          "url": "https://github.com/Automattic/streamparse"
+        },
+        "body": "Explicitly hard-code the `pystorm` dependency as the version at:\r\n\r\nhttps://github.com/Automattic/pystorm/tree/v3.1.4",
+        "comments": 0
+      },
+      {
+        "title": "v0.2.0",
+        "html_url": "https://github.com/Automattic/remote-data-blocks/pull/138",
+        "state": "closed",
+        "created_at": "2024-10-01T15:12:12Z",
+        "updated_at": "2024-10-01T15:19:42Z",
+        "closed_at": "2024-10-01T15:19:40Z",
+        "merged_at": "2024-10-01T15:19:40Z",
+        "repository": {
+          "name": "Automattic/remote-data-blocks",
+          "url": "https://github.com/Automattic/remote-data-blocks"
+        },
+        "body": "Following https://github.com/Automattic/remote-data-blocks/blob/ca75e810dcade4bdbfc0d0e1874a81825a13b5c1/docs/releasing.md\r\n\r\nI did:\r\n\r\n```\r\ngit checkout trunk\r\ngit pull origin trunk\r\ncomposer install\r\nnvm i\r\nnpm i\r\n./bin/release minor\r\ngit push origin release/v0.2.0\r\n```",
+        "comments": 0
+      },
+      {
+        "title": "Do not auto-align assignments to the right-most level",
+        "html_url": "https://github.com/Automattic/remote-data-blocks/pull/114",
+        "state": "closed",
+        "created_at": "2024-09-26T21:02:20Z",
+        "updated_at": "2024-10-28T23:18:24Z",
+        "closed_at": "2024-10-28T23:18:22Z",
+        "merged_at": "2024-10-28T23:18:22Z",
+        "repository": {
+          "name": "Automattic/remote-data-blocks",
+          "url": "https://github.com/Automattic/remote-data-blocks"
+        },
+        "body": "We don't want to enforce all subsequent assignments to have the same spacing before the assignment operator.\r\nDoing so means a single change to one line can result in a large changeset that's more difficult to review.\r\n\r\nCase in point: reintroducing the `map_name` key to the associative array here:\r\nhttps://github.com/Automattic/remote-data-blocks/pull/80/commits/3c272bce662c8974313359e181427db1ebf62f5f\r\n\r\n...resulted in a number of unrelated changes that needed to be applied here:\r\nhttps://github.com/Automattic/remote-data-blocks/pull/80/commits/579313a01b99902f2be348ff351e7be962b224f4\r\n\r\nIn the context of a pull request, merge commit, etc. etc., this obscures the intent behind the change and makes it harder to spot bugs.",
+        "comments": 4
+      },
+      {
+        "title": "Fix typo in blueprints/public/schema-readme.md",
+        "html_url": "https://github.com/WordPress/wordpress-playground/pull/1134",
+        "state": "closed",
+        "created_at": "2024-03-23T13:49:50Z",
+        "updated_at": "2024-03-23T16:29:18Z",
+        "closed_at": "2024-03-23T16:29:07Z",
+        "merged_at": "2024-03-23T16:29:06Z",
+        "repository": {
+          "name": "WordPress/wordpress-playground",
+          "url": "https://github.com/WordPress/wordpress-playground"
+        },
+        "body": "> rollyps\r\n\r\nto: \"rollups\"\r\n\r\n## What is this PR doing?\r\n\r\nDocs only change\r\n\r\n## What problem is it solving?\r\n\r\nA (presumably) mistyped word.\r\n\r\n## How is the problem addressed?\r\n\r\nUsing the correct spelling\r\n\r\n## Testing Instructions\r\n\r\nn/a",
+        "comments": 1
+      },
+      {
+        "title": "Fix typo in src/classes/queue.ts",
+        "html_url": "https://github.com/taskforcesh/bullmq/pull/2348",
+        "state": "closed",
+        "created_at": "2023-12-21T23:30:19Z",
+        "updated_at": "2023-12-22T04:44:28Z",
+        "closed_at": "2023-12-22T04:44:28Z",
+        "merged_at": "2023-12-22T04:44:28Z",
+        "repository": {
+          "name": "taskforcesh/bullmq",
+          "url": "https://github.com/taskforcesh/bullmq"
+        },
+        "body": "\"othe high-level\" should say \"other...\"",
+        "comments": 0
+      },
+      {
+        "title": "Website: Fix typo in pure.mdx: \"famouse\"",
+        "html_url": "https://github.com/samchon/typia/pull/906",
+        "state": "closed",
+        "created_at": "2023-12-11T21:35:04Z",
+        "updated_at": "2023-12-12T01:18:21Z",
+        "closed_at": "2023-12-12T01:18:21Z",
+        "merged_at": "2023-12-12T01:18:21Z",
+        "repository": {
+          "name": "samchon/typia",
+          "url": "https://github.com/samchon/typia"
+        },
+        "body": "Thanks for the lib.",
+        "comments": 0
+      },
+      {
+        "title": "Update to node 16 and npm 8 in the getting started with code contribution doc",
+        "html_url": "https://github.com/WordPress/gutenberg/pull/53912",
+        "state": "closed",
+        "created_at": "2023-08-24T14:17:24Z",
+        "updated_at": "2024-08-07T22:04:19Z",
+        "closed_at": "2023-08-25T02:42:45Z",
+        "merged_at": "2023-08-25T02:42:45Z",
+        "repository": {
+          "name": "WordPress/gutenberg",
+          "url": "https://github.com/WordPress/gutenberg"
+        },
+        "body": "## What?\r\n\r\nCorrect an outdated reference to node and npm versions in the \"Getting Started with Code Contribution\" doc\r\n\r\n## Why?\r\n\r\nBring docs in line with the versions we're using:\r\n\r\nhttps://github.com/WordPress/gutenberg/blob/bc94b203029bd2a2aea191a3ecb681dcddefe045/package.json#L17-L20\r\n\r\nhttps://github.com/WordPress/gutenberg/blob/bc94b203029bd2a2aea191a3ecb681dcddefe045/.nvmrc#L1\r\n\r\n## How?\r\n\r\nsimple doc update\r\n\r\n## Testing Instructions\r\nn/a\r\n\r\n### Testing Instructions for Keyboard\r\n\r\nn/a\r\n\r\n## Screenshots or screencast <!-- if applicable -->\r\n\r\nn/a\r\n",
+        "comments": 1
+      },
+      {
+        "title": "Reference Middleware and Strategy Headers via `static` keyword instead of `self`",
+        "html_url": "https://github.com/Kevinrob/guzzle-cache-middleware/pull/189",
+        "state": "closed",
+        "created_at": "2024-08-27T18:25:30Z",
+        "updated_at": "2024-08-28T13:31:58Z",
+        "closed_at": "2024-08-28T06:05:07Z",
+        "merged_at": "2024-08-28T06:05:07Z",
+        "repository": {
+          "name": "Kevinrob/guzzle-cache-middleware",
+          "url": "https://github.com/Kevinrob/guzzle-cache-middleware"
+        },
+        "body": "Classes `CacheMiddleware` & `GreedyCacheStrategy` are shipped with this package with specific header names set via class constant:\r\n\r\nhttps://github.com/Kevinrob/guzzle-cache-middleware/blob/7f258533be4ac2b8c1160d98d2513024937e32c7/src/CacheMiddleware.php#L21-L26\r\n\r\nhttps://github.com/Kevinrob/guzzle-cache-middleware/blob/7f258533be4ac2b8c1160d98d2513024937e32c7/src/Strategy/GreedyCacheStrategy.php#L22\r\n\r\nExtending these classes does not currently permit altering those values (unless the functionality altered in this PR are also overridden).\r\n\r\nThis change updates the references to these class constants to use the `static` keyword as opposed to `self` to take advantage of [PHP's Late Static Bindings](https://www.php.net/manual/en/language.oop5.late-static-bindings.php#language.oop5.late-static-bindings.usage) feature.\r\n\r\nThat way, custom implementations values are prioritized above the defaults for these headers.\r\n\r\nI ran the automated test suite and it still passed for me.",
+        "comments": 0
+      }
+    ]
+  },
+  "recent_activity": [
+    {
+      "type": "PushEvent",
+      "repo": {
+        "name": "jblz/awesome-project",
+        "url": "https://github.com/jblz/awesome-project"
+      },
+      "created_at": "2025-07-25T14:30:22Z",
+      "payload": {}
+    },
+    {
+      "type": "CreateEvent",
+      "repo": {
+        "name": "jblz/new-feature",
+        "url": "https://github.com/jblz/new-feature"
+      },
+      "created_at": "2025-07-24T10:15:45Z",
+      "payload": {
+        "ref_type": "branch"
+      }
+    },
+    {
+      "type": "IssuesEvent",
+      "repo": {
+        "name": "jblz/react-components",
+        "url": "https://github.com/jblz/react-components"
+      },
+      "created_at": "2025-07-22T16:20:30Z",
+      "payload": {
+        "action": "closed"
+      }
+    },
+    {
+      "type": "PullRequestEvent",
+      "repo": {
+        "name": "jblz/python-utilities",
+        "url": "https://github.com/jblz/python-utilities"
+      },
+      "created_at": "2025-07-20T09:45:18Z",
+      "payload": {
+        "action": "opened"
+      }
+    },
+    {
+      "type": "WatchEvent",
+      "repo": {
+        "name": "jblz/css-framework",
+        "url": "https://github.com/jblz/css-framework"
+      },
+      "created_at": "2025-07-17T12:30:55Z",
+      "payload": {}
+    }
+  ],
+  "stats": {
+    "total_stars": 363,
+    "total_forks": 64,
+    "languages_used": 4,
+    "oss_contributions_count": 50
+  }
+}
