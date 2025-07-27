@@ -1,41 +1,45 @@
 /**
  * GitHub Contributions Display Module
- * Fetches and displays GitHub user contributions, repositories, and stats
+ * Displays GitHub user contributions, repositories, and stats using pre-fetched static data
  */
 
 class GitHubContributions {
     constructor(username) {
         this.username = username;
-        this.apiUrl = 'https://api.github.com';
-        this.cache = new Map();
-        this.cacheExpiry = 5 * 60 * 1000; // 5 minutes
+        this.dataUrl = '_data/github-contributions.json';
+        this.data = null;
     }
 
-    async fetchFromCache(key, fetchFunction) {
-        const cached = this.cache.get(key);
-        if (cached && Date.now() - cached.timestamp < this.cacheExpiry) {
-            return cached.data;
+    async loadStaticData() {
+        if (this.data) {
+            return this.data;
         }
 
         try {
-            const data = await fetchFunction();
-            this.cache.set(key, { data, timestamp: Date.now() });
-            return data;
+            const response = await fetch(this.dataUrl);
+            if (!response.ok) {
+                throw new Error(`Failed to load GitHub data: ${response.status}`);
+            }
+            this.data = await response.json();
+            console.log('GitHub contributions data loaded successfully');
+            return this.data;
         } catch (error) {
-            console.error(`Error fetching ${key}:`, error);
+            console.error('Error loading GitHub data:', error);
             
-            // If we're on localhost or there's a CORS error, return sample data
-            if (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || error.message.includes('fetch')) {
-                return this.getSampleData(key);
+            // Fallback to sample data for development
+            if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+                return this.getSampleData();
             }
             
             throw error;
         }
     }
 
-    getSampleData(type) {
-        const sampleData = {
-            userInfo: {
+    getSampleData() {
+        // Fallback data for development - mirrors the structure of the static JSON
+        return {
+            generated_at: new Date().toISOString(),
+            user: {
                 login: 'jblz',
                 name: 'Jeff Bowen', 
                 public_repos: 25,
@@ -45,63 +49,71 @@ class GitHubContributions {
                 location: 'Earth',
                 blog: 'https://jeff.blog'
             },
-            repositories: [
-                {
-                    name: 'awesome-project',
-                    description: 'An amazing open source project that does cool things',
-                    html_url: 'https://github.com/jblz/awesome-project',
-                    stargazers_count: 128,
-                    forks_count: 23,
-                    language: 'JavaScript',
-                    fork: false
-                },
-                {
-                    name: 'react-components',
-                    description: 'Reusable React components library',
-                    html_url: 'https://github.com/jblz/react-components',
-                    stargazers_count: 89,
-                    forks_count: 15,
-                    language: 'TypeScript',
-                    fork: false
-                },
-                {
-                    name: 'python-utilities',
-                    description: 'Collection of useful Python utility functions',
-                    html_url: 'https://github.com/jblz/python-utilities',
-                    stargazers_count: 64,
-                    forks_count: 12,
-                    language: 'Python',
-                    fork: false
-                },
-                {
-                    name: 'css-framework',
-                    description: 'Lightweight CSS framework for modern web apps',
-                    html_url: 'https://github.com/jblz/css-framework',
-                    stargazers_count: 45,
-                    forks_count: 8,
-                    language: 'CSS',
-                    fork: false
-                },
-                {
-                    name: 'node-api',
-                    description: 'RESTful API built with Node.js and Express',
-                    html_url: 'https://github.com/jblz/node-api',
-                    stargazers_count: 37,
-                    forks_count: 6,
-                    language: 'JavaScript',
-                    fork: false
-                },
-                {
-                    name: 'go-microservice',
-                    description: 'Microservice architecture example in Go',
-                    html_url: 'https://github.com/jblz/go-microservice',
-                    stargazers_count: 28,
-                    forks_count: 4,
-                    language: 'Go',
-                    fork: false
+            repositories: {
+                total_count: 6,
+                top_repositories: [
+                    {
+                        name: 'awesome-project',
+                        description: 'An amazing open source project that does cool things',
+                        html_url: 'https://github.com/jblz/awesome-project',
+                        stargazers_count: 128,
+                        forks_count: 23,
+                        language: 'JavaScript'
+                    },
+                    {
+                        name: 'react-components',
+                        description: 'Reusable React components library',
+                        html_url: 'https://github.com/jblz/react-components',
+                        stargazers_count: 89,
+                        forks_count: 15,
+                        language: 'TypeScript'
+                    },
+                    {
+                        name: 'python-utilities',
+                        description: 'Collection of useful Python utility functions',
+                        html_url: 'https://github.com/jblz/python-utilities',
+                        stargazers_count: 64,
+                        forks_count: 12,
+                        language: 'Python'
+                    },
+                    {
+                        name: 'css-framework',
+                        description: 'Lightweight CSS framework for modern web apps',
+                        html_url: 'https://github.com/jblz/css-framework',
+                        stargazers_count: 45,
+                        forks_count: 8,
+                        language: 'CSS'
+                    },
+                    {
+                        name: 'node-api',
+                        description: 'RESTful API built with Node.js and Express',
+                        html_url: 'https://github.com/jblz/node-api',
+                        stargazers_count: 37,
+                        forks_count: 6,
+                        language: 'JavaScript'
+                    },
+                    {
+                        name: 'go-microservice',
+                        description: 'Microservice architecture example in Go',
+                        html_url: 'https://github.com/jblz/go-microservice',
+                        stargazers_count: 28,
+                        forks_count: 4,
+                        language: 'Go'
+                    }
+                ],
+                language_stats: {
+                    'JavaScript': 2,
+                    'TypeScript': 1,
+                    'Python': 1,
+                    'CSS': 1,
+                    'Go': 1
                 }
-            ],
-            events: [
+            },
+            oss_contributions: {
+                total_count: 10,
+                contributions: []
+            },
+            recent_activity: [
                 {
                     type: 'PushEvent',
                     repo: { name: 'jblz/awesome-project' },
@@ -118,61 +130,15 @@ class GitHubContributions {
                     repo: { name: 'jblz/react-components' },
                     payload: { action: 'closed' },
                     created_at: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString()
-                },
-                {
-                    type: 'PullRequestEvent',
-                    repo: { name: 'jblz/python-utilities' },
-                    payload: { action: 'opened' },
-                    created_at: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()
-                },
-                {
-                    type: 'WatchEvent',
-                    repo: { name: 'jblz/css-framework' },
-                    created_at: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString()
                 }
-            ]
+            ],
+            stats: {
+                total_stars: 391,
+                total_forks: 68,
+                languages_used: 6,
+                oss_contributions_count: 10
+            }
         };
-
-        return sampleData[type] || {};
-    }
-
-    async fetchUserInfo() {
-        return this.fetchFromCache('userInfo', async () => {
-            const response = await fetch(`${this.apiUrl}/users/${this.username}`, {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'User-Agent': 'jblz.github.io'
-                }
-            });
-            if (!response.ok) throw new Error(`Failed to fetch user info: ${response.status}`);
-            return response.json();
-        });
-    }
-
-    async fetchRepositories() {
-        return this.fetchFromCache('repositories', async () => {
-            const response = await fetch(`${this.apiUrl}/users/${this.username}/repos?sort=updated&per_page=100`, {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'User-Agent': 'jblz.github.io'
-                }
-            });
-            if (!response.ok) throw new Error(`Failed to fetch repositories: ${response.status}`);
-            return response.json();
-        });
-    }
-
-    async fetchEvents() {
-        return this.fetchFromCache('events', async () => {
-            const response = await fetch(`${this.apiUrl}/users/${this.username}/events/public?per_page=30`, {
-                headers: {
-                    'Accept': 'application/vnd.github.v3+json',
-                    'User-Agent': 'jblz.github.io'
-                }
-            });
-            if (!response.ok) throw new Error(`Failed to fetch events: ${response.status}`);
-            return response.json();
-        });
     }
 
     renderUserStats(user) {
@@ -194,11 +160,8 @@ class GitHubContributions {
         `;
     }
 
-    renderTopRepositories(repos) {
-        const topRepos = repos
-            .filter(repo => !repo.fork)
-            .sort((a, b) => (b.stargazers_count + b.forks_count) - (a.stargazers_count + a.forks_count))
-            .slice(0, 6);
+    renderTopRepositories(repositoriesData) {
+        const topRepos = repositoriesData.top_repositories;
 
         return `
             <div class="top-repositories">
@@ -224,14 +187,8 @@ class GitHubContributions {
         `;
     }
 
-    renderLanguageStats(repos) {
-        const languages = {};
-        repos.forEach(repo => {
-            if (repo.language && !repo.fork) {
-                languages[repo.language] = (languages[repo.language] || 0) + 1;
-            }
-        });
-
+    renderLanguageStats(repositoriesData) {
+        const languages = repositoriesData.language_stats;
         const sortedLanguages = Object.entries(languages)
             .sort(([,a], [,b]) => b - a)
             .slice(0, 8);
@@ -263,8 +220,39 @@ class GitHubContributions {
         `;
     }
 
-    renderRecentActivity(events) {
-        const recentEvents = events.slice(0, 5);
+    renderOSSContributions(ossData) {
+        if (!ossData.contributions || ossData.contributions.length === 0) {
+            return '';
+        }
+
+        const recentContributions = ossData.contributions.slice(0, 5);
+        
+        return `
+            <div class="oss-contributions">
+                <h3>Recent OSS Contributions (${ossData.total_count} total)</h3>
+                <div class="contributions-list">
+                    ${recentContributions.map(contribution => {
+                        const date = new Date(contribution.merged_at || contribution.closed_at).toLocaleDateString();
+                        return `
+                            <div class="contribution-item">
+                                <div class="contribution-title">
+                                    <a href="${contribution.html_url}" target="_blank" rel="noopener">${contribution.title}</a>
+                                </div>
+                                <div class="contribution-meta">
+                                    <span class="contribution-repo">${contribution.repository.name}</span>
+                                    <span class="contribution-date">${date}</span>
+                                </div>
+                                ${contribution.body ? `<div class="contribution-body">${contribution.body.substring(0, 100)}${contribution.body.length > 100 ? '...' : ''}</div>` : ''}
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    renderRecentActivity(activityData) {
+        const recentEvents = activityData.slice(0, 5);
         
         return `
             <div class="recent-activity">
@@ -279,13 +267,13 @@ class GitHubContributions {
                                 action = `Pushed to ${event.repo.name}`;
                                 break;
                             case 'CreateEvent':
-                                action = `Created ${event.payload.ref_type} in ${event.repo.name}`;
+                                action = `Created ${event.payload?.ref_type || 'branch'} in ${event.repo.name}`;
                                 break;
                             case 'IssuesEvent':
-                                action = `${event.payload.action} issue in ${event.repo.name}`;
+                                action = `${event.payload?.action || 'updated'} issue in ${event.repo.name}`;
                                 break;
                             case 'PullRequestEvent':
-                                action = `${event.payload.action} pull request in ${event.repo.name}`;
+                                action = `${event.payload?.action || 'updated'} pull request in ${event.repo.name}`;
                                 break;
                             case 'WatchEvent':
                                 action = `Starred ${event.repo.name}`;
@@ -327,9 +315,8 @@ class GitHubContributions {
                 container.innerHTML = `
                     <div class="dev-notice">
                         <h3>🚧 Development Mode</h3>
-                        <p>GitHub API calls are blocked on localhost due to CORS policy.</p>
-                        <p>This will work properly when deployed to GitHub Pages.</p>
-                        <p>Showing sample data for demonstration...</p>
+                        <p>Using sample data for demonstration in development environment.</p>
+                        <p>Static GitHub data will be displayed when deployed to GitHub Pages.</p>
                     </div>
                 `;
             } else {
@@ -347,11 +334,7 @@ class GitHubContributions {
         this.showLoading(containerId);
 
         try {
-            const [user, repos, events] = await Promise.all([
-                this.fetchUserInfo(),
-                this.fetchRepositories(),
-                this.fetchEvents()
-            ]);
+            const data = await this.loadStaticData();
 
             const container = document.getElementById(containerId);
             if (!container) {
@@ -359,32 +342,48 @@ class GitHubContributions {
             }
 
             const isLocalhost = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
-            const devNotice = isLocalhost ? `
-                <div class="dev-notice">
-                    <h3>🚧 Development Mode</h3>
-                    <p>Showing sample data for demonstration. Real GitHub data will be displayed when deployed to GitHub Pages.</p>
-                </div>
-            ` : '';
+            const isUsingStaticData = !!this.data;
+            
+            let notice = '';
+            if (isLocalhost && !isUsingStaticData) {
+                notice = `
+                    <div class="dev-notice">
+                        <h3>🚧 Development Mode</h3>
+                        <p>Using sample data for demonstration. Static GitHub data will be displayed when deployed to GitHub Pages.</p>
+                    </div>
+                `;
+            } else if (isUsingStaticData) {
+                notice = `
+                    <div class="static-data-notice">
+                        <p><em>GitHub contributions data last updated: ${new Date(data.generated_at).toLocaleDateString()}</em></p>
+                    </div>
+                `;
+            }
 
             container.innerHTML = `
                 <div class="github-contributions">
                     <div class="contributions-header">
                         <h2>GitHub Contributions</h2>
-                        <p>Showcasing activity across all repositories</p>
+                        <p>Showcasing open source contributions and personal projects</p>
                     </div>
                     
-                    ${devNotice}
+                    ${notice}
                     
-                    ${this.renderUserStats(user)}
+                    ${this.renderUserStats(data.user)}
                     
                     <div class="contributions-content">
                         <div class="left-column">
-                            ${this.renderTopRepositories(repos)}
-                            ${this.renderLanguageStats(repos)}
+                            ${this.renderTopRepositories(data.repositories)}
+                            ${this.renderLanguageStats(data.repositories)}
                         </div>
                         <div class="right-column">
-                            ${this.renderRecentActivity(events)}
+                            ${this.renderOSSContributions(data.oss_contributions)}
+                            ${this.renderRecentActivity(data.recent_activity)}
                         </div>
+                    </div>
+                    
+                    <div class="github-summary">
+                        <p><strong>Summary:</strong> ${data.stats.total_stars} stars earned • ${data.stats.oss_contributions_count} OSS contributions • ${data.stats.languages_used} languages used</p>
                     </div>
                 </div>
             `;
