@@ -22,12 +22,12 @@ fi
 echo "🔄 Running data collection script..."
 if node "$SCRIPT_PATH"; then
     echo "✅ GitHub contributions data updated successfully!"
-    echo "📂 Data saved to _data/github-contributions.json"
+    echo "📂 Data saved to data/github-contributions.json"
     
     # Show file size and modification date
-    if [ -f "_data/github-contributions.json" ]; then
-        FILE_SIZE=$(du -h "_data/github-contributions.json" | cut -f1)
-        FILE_DATE=$(date -r "_data/github-contributions.json" '+%Y-%m-%d %H:%M:%S')
+    if [ -f "data/github-contributions.json" ]; then
+        FILE_SIZE=$(du -h "data/github-contributions.json" | cut -f1)
+        FILE_DATE=$(date -r "data/github-contributions.json" '+%Y-%m-%d %H:%M:%S')
         echo "📊 File size: $FILE_SIZE"
         echo "📅 Last updated: $FILE_DATE"
     fi
