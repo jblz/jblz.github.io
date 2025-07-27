@@ -1,0 +1,49 @@
+# GitHub Pages Configuration
+title: "jblz.github.io"
+description: "Jeff Bowen's personal GitHub Pages site showcasing contributions and projects"
+author: "Jeff Bowen (jblz)"
+url: "https://jblz.github.io"
+
+# GitHub Pages settings
+github:
+  repository_name: "jblz.github.io"
+  owner_name: "jblz"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-github-metadata
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+
+# Include files that start with underscore
+include:
+  - _pages
+
+# SEO and metadata
+lang: en-US
+timezone: America/New_York
+
+# Social media and contact
+social:
+  github: jblz
+  website: https://jeff.blog
+
+# GitHub API settings (will work when deployed to GitHub Pages)
+github_api:
+  username: jblz
+  use_sample_data_on_localhost: true
