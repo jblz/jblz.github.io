@@ -6,7 +6,7 @@
 class GitHubContributions {
     constructor(username) {
         this.username = username;
-        this.dataUrl = 'data/github-contributions.json';
+        this.dataUrl = 'github-contributions.json';
         this.data = null;
     }
 
