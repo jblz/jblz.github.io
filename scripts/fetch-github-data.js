@@ -19,7 +19,7 @@ const https = require('https');
 
 // Configuration
 const USERNAME = 'jblz';
-const OUTPUT_FILE = path.join(__dirname, '..', 'data', 'github-contributions.json');
+const OUTPUT_FILE = path.join(__dirname, '..', 'github-contributions.json');
 const GITHUB_API_BASE = 'https://api.github.com';
 
 // GitHub API helper
